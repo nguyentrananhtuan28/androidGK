@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <TextView
+        android:id="@+id/UserLogin"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/poppinsmedium"
+        android:gravity="center"
+        android:text=""
+        android:textColor="#3F51B5"
+        android:textSize="22dp"
+        tools:layout_editor_absoluteX="40dp"
+        tools:layout_editor_absoluteY="163dp" />
+        <TextView
+        android:id="@+id/PassLogin"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/poppinsmedium"
+        android:gravity="center"
+        android:text=""
+        android:textColor="#3F51B5"
+        android:textSize="22dp"
+        tools:layout_editor_absoluteX="40dp"
+        tools:layout_editor_absoluteY="314dp" />
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/button_back"
+            android:gravity="end"
+            tools:ignore="MissingConstraints">
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:fontFamily="@font/poppinsbold"
+                android:gravity="center"
+                android:text="Đăng xuất"
+                android:onClick="ClickDangXuat"
+                android:textColor="#fff"
+                android:textSize="22dp" />
+        </LinearLayout>
+    </LinearLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>
