@@ -1,0 +1,169 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".DetailPActivity">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="68dp"
+        android:layout_below="@+id/imageView_detail"
+        android:layout_marginTop="0dp"
+        android:background="#333">
+
+        <TextView
+            android:id="@+id/textViewPPrice"
+            android:layout_width="wrap_content"
+            android:layout_height="28dp"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentBottom="true"
+            android:layout_marginTop="39dp"
+            android:layout_marginEnd="14dp"
+            android:layout_marginRight="14dp"
+            android:layout_marginBottom="1dp"
+            android:text="ProductPrice"
+            android:textColor="@color/white"
+            android:textSize="16sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/textViewPName2"
+            android:layout_width="wrap_content"
+            android:layout_height="28dp"
+            android:layout_alignParentBottom="true"
+            android:layout_marginBottom="1dp"
+            android:text="ProductDesc"
+            android:textColor="@color/white"
+            android:textSize="15sp" />
+
+        <TextView
+            android:id="@+id/textView_PName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:layout_marginTop="8dp"
+            android:text="ProductName"
+            android:textColor="@color/white"
+            android:textSize="16sp"
+            android:textStyle="bold" />
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/topliner"
+        android:layout_width="match_parent"
+        android:layout_height="43dp"
+        android:background="#0388CC"
+        android:orientation="horizontal">
+
+        <ImageView
+            android:id="@+id/imageView"
+            android:layout_width="66dp"
+            android:layout_height="match_parent"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentBottom="true"
+            android:layout_centerVertical="true"
+            android:layout_marginStart="0dp"
+            android:layout_marginLeft="0dp"
+            android:onClick="quaylai"
+            android:layout_marginBottom="0dp"
+            android:layout_weight="1"
+            app:srcCompat="?attr/actionModeCloseDrawable" />
+    </RelativeLayout>
+
+    <ImageView
+        android:id="@+id/imageView_detail"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/topliner"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:layout_marginStart="0dp"
+        android:layout_marginLeft="0dp"
+        android:layout_marginTop="0dp"
+        android:layout_marginEnd="0dp"
+        android:layout_marginRight="0dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/ic_launcher_foreground"
+        tools:ignore="VectorDrawableCompat" />
+
+    <RelativeLayout
+        android:id="@+id/Product_content"
+        android:layout_width="match_parent"
+        android:layout_height="68dp"
+        android:layout_below="@+id/imageView_detail"
+        android:layout_marginTop="0dp"
+        android:background="#333">
+
+        <TextView
+            android:id="@+id/textView_PName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:layout_marginTop="8dp"
+            android:text="ProductName"
+            android:textColor="@color/white"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            tools:ignore="DuplicateIds" />
+
+        <TextView
+            android:id="@+id/textView_PDesc"
+            android:layout_width="wrap_content"
+            android:layout_height="28dp"
+            android:layout_alignParentBottom="true"
+            android:layout_marginBottom="1dp"
+            android:text="ProductDesc"
+            android:textColor="@color/white"
+            android:textSize="15sp" />
+
+        <TextView
+            android:id="@+id/textView_PPrice"
+            android:layout_width="wrap_content"
+            android:layout_height="28dp"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentBottom="true"
+            android:layout_marginTop="39dp"
+            android:layout_marginEnd="14dp"
+            android:layout_marginRight="14dp"
+            android:layout_marginBottom="1dp"
+            android:text="ProductPrice"
+            android:textColor="@color/white"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            tools:ignore="DuplicateIds" />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/Product_content"
+        android:orientation="horizontal">
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/button"
+            android:textColor="@color/white"
+            android:layout_width="wrap_content"
+            android:paddingLeft="5dp"
+            android:paddingRight="5dp"
+            android:background="#cf2127"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:layout_gravity="top"
+            android:layout_marginTop="5dp"
+            android:text="Thêm vào giở hàng"
+            android:layout_centerHorizontal="true"
+            tools:ignore="UnknownId" />
+    </RelativeLayout>
+
+</RelativeLayout>

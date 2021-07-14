@@ -1,51 +1,68 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:orientation="vertical">
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        tools:ignore="MissingConstraints">
+        <TextView
+            android:paddingTop="2dp"
+            android:paddingLeft="16dp"
+            android:background="@color/colorPrimaryDark"
+            android:textSize="20dp"
+            android:textStyle="bold"
+            android:textColor="@color/white"
+            android:layout_width="250dp"
+            android:layout_height="30dp"
+            android:layout_gravity="left"
+            android:text="Danh sách sản phẩm">
+        </TextView>
+    </LinearLayout>
+
+    <ListView
+        android:id="@+id/listView"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginTop="30dp"
+        android:layout_marginBottom="80dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0"
+        app:layout_goneMarginTop="60dp"></ListView>
+<LinearLayout
+    android:layout_width="wrap_content"
+    android:layout_height="match_parent"
+    android:layout_marginTop="650dp"
+    tools:ignore="MissingConstraints" >
+
+    <RelativeLayout
+        android:layout_width="175dp"
+        android:layout_height="wrap_content"
+        android:background="@drawable/button_back"
+        tools:ignore="MissingConstraints"
+        tools:layout_editor_absoluteY="650dp">
 
         <TextView
-        android:id="@+id/UserLogin"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:fontFamily="@font/poppinsmedium"
-        android:gravity="center"
-        android:text=""
-        android:textColor="#3F51B5"
-        android:textSize="22dp"
-        tools:layout_editor_absoluteX="40dp"
-        tools:layout_editor_absoluteY="163dp" />
-        <TextView
-        android:id="@+id/PassLogin"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:fontFamily="@font/poppinsmedium"
-        android:gravity="center"
-        android:text=""
-        android:textColor="#3F51B5"
-        android:textSize="22dp"
-        tools:layout_editor_absoluteX="40dp"
-        tools:layout_editor_absoluteY="314dp" />
-        <LinearLayout
+            android:id="@+id/btnBack"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="@drawable/button_back"
-            android:gravity="end"
-            tools:ignore="MissingConstraints">
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="5dp"
-                android:fontFamily="@font/poppinsbold"
-                android:gravity="center"
-                android:text="Đăng xuất"
-                android:onClick="ClickDangXuat"
-                android:textColor="#fff"
-                android:textSize="22dp" />
-        </LinearLayout>
-    </LinearLayout>
+            android:layout_marginTop="5dp"
+            android:fontFamily="@font/poppinsbold"
+            android:gravity="center"
+            android:onClick="back"
+            android:text="Quay lại"
+            android:textColor="#fff"
+            android:textSize="22dp"
+            tools:ignore="OnClick" />
+    </RelativeLayout>
+</LinearLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>
