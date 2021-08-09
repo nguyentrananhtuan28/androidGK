@@ -6,80 +6,68 @@
     android:layout_height="match_parent"
     tools:context=".DetailPActivity">
 
-    <RelativeLayout
-        android:layout_width="match_parent"
-        android:layout_height="68dp"
-        android:layout_below="@+id/imageView_detail"
-        android:layout_marginTop="0dp"
-        android:background="#333">
 
-        <TextView
-            android:id="@+id/textViewPPrice"
-            android:layout_width="wrap_content"
-            android:layout_height="28dp"
-            android:layout_alignParentTop="true"
-            android:layout_alignParentEnd="true"
-            android:layout_alignParentRight="true"
-            android:layout_alignParentBottom="true"
-            android:layout_marginTop="39dp"
-            android:layout_marginEnd="14dp"
-            android:layout_marginRight="14dp"
-            android:layout_marginBottom="1dp"
-            android:text="ProductPrice"
-            android:textColor="@color/white"
-            android:textSize="16sp"
-            android:textStyle="bold" />
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/Btn_Back_edit"
+        android:layout_width="120dp"
+        android:layout_height="38dp"
+        android:layout_below="@+id/Product_content"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentBottom="true"
+        android:layout_gravity="top"
+        android:layout_marginTop="260dp"
+        android:layout_marginEnd="9dp"
+        android:layout_marginRight="9dp"
+        android:layout_marginBottom="15dp"
+        android:background="@drawable/btn_back"
+        android:paddingLeft="5dp"
 
-        <TextView
-            android:id="@+id/textViewPName2"
-            android:layout_width="wrap_content"
-            android:layout_height="28dp"
-            android:layout_alignParentBottom="true"
-            android:layout_marginBottom="1dp"
-            android:text="ProductDesc"
-            android:textColor="@color/white"
-            android:textSize="15sp" />
-
-        <TextView
-            android:id="@+id/textView_PName"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignParentTop="true"
-            android:layout_marginTop="8dp"
-            android:text="ProductName"
-            android:textColor="@color/white"
-            android:textSize="16sp"
-            android:textStyle="bold" />
-
-    </RelativeLayout>
+        android:paddingRight="5dp"
+        android:text="Sửa"
+        android:textColor="@color/white"
+        tools:ignore="UnknownId" />
 
     <RelativeLayout
         android:id="@+id/topliner"
         android:layout_width="match_parent"
         android:layout_height="43dp"
-        android:background="#0388CC"
+        android:background="#bfffff"
         android:orientation="horizontal">
 
+
         <ImageView
-            android:id="@+id/imageView"
-            android:layout_width="66dp"
+            android:id="@+id/imageBack"
+            android:layout_width="46dp"
             android:layout_height="match_parent"
             android:layout_alignParentStart="true"
             android:layout_alignParentLeft="true"
             android:layout_alignParentBottom="true"
             android:layout_centerVertical="true"
-            android:layout_marginStart="0dp"
-            android:layout_marginLeft="0dp"
-            android:onClick="quaylai"
-            android:layout_marginBottom="0dp"
+            android:layout_marginStart="9dp"
+            android:layout_marginLeft="9dp"
+            android:layout_marginBottom="-2dp"
             android:layout_weight="1"
-            app:srcCompat="?attr/actionModeCloseDrawable" />
+            tools:ignore="OnClick" />
+
+        <TextView
+            android:layout_width="250dp"
+            android:layout_height="43dp"
+            android:layout_alignParentEnd="true"
+            android:layout_gravity="left"
+            android:layout_marginEnd="40dp"
+            android:paddingLeft="16dp"
+            android:paddingTop="8dp"
+            android:text="Chi Tiết Truyện Tranh"
+            android:textColor="#000"
+            android:textSize="20dp"
+            android:textStyle="bold"></TextView>
     </RelativeLayout>
 
     <ImageView
-        android:id="@+id/imageView_detail"
+        android:id="@+id/image_edit"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="364dp"
         android:layout_below="@+id/topliner"
         android:layout_alignParentStart="true"
         android:layout_alignParentLeft="true"
@@ -92,78 +80,95 @@
         android:layout_marginRight="0dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/ic_launcher_foreground"
         tools:ignore="VectorDrawableCompat" />
 
     <RelativeLayout
         android:id="@+id/Product_content"
         android:layout_width="match_parent"
-        android:layout_height="68dp"
-        android:layout_below="@+id/imageView_detail"
-        android:layout_marginTop="0dp"
-        android:background="#333">
+        android:layout_height="100dp"
+        android:layout_alignBottom="@+id/image_edit"
+        android:layout_marginBottom="-110dp"
+        android:background="@color/white">
 
         <TextView
-            android:id="@+id/textView_PName"
+            android:id="@+id/txt_1"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignParentTop="true"
-            android:layout_marginTop="8dp"
-            android:text="ProductName"
-            android:textColor="@color/white"
+            android:layout_alignParentEnd="true"
+            android:layout_marginTop="26dp"
+            android:layout_marginEnd="236dp"
+            android:text="Tên sản phẩm:"
             android:textSize="16sp"
             android:textStyle="bold"
             tools:ignore="DuplicateIds" />
 
         <TextView
-            android:id="@+id/textView_PDesc"
+            android:id="@+id/txt_nameproduct"
             android:layout_width="wrap_content"
-            android:layout_height="28dp"
-            android:layout_alignParentBottom="true"
-            android:layout_marginBottom="1dp"
-            android:text="ProductDesc"
-            android:textColor="@color/white"
-            android:textSize="15sp" />
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentEnd="true"
+            android:layout_marginTop="26dp"
+            android:layout_marginEnd="10dp"
+            android:text="ProductName"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            tools:ignore="DuplicateIds" />
 
         <TextView
-            android:id="@+id/textView_PPrice"
+            android:id="@+id/txt_2"
             android:layout_width="wrap_content"
             android:layout_height="28dp"
             android:layout_alignParentTop="true"
             android:layout_alignParentEnd="true"
             android:layout_alignParentRight="true"
             android:layout_alignParentBottom="true"
-            android:layout_marginTop="39dp"
-            android:layout_marginEnd="14dp"
-            android:layout_marginRight="14dp"
-            android:layout_marginBottom="1dp"
+            android:layout_marginTop="60dp"
+            android:layout_marginEnd="237dp"
+            android:layout_marginRight="237dp"
+            android:layout_marginBottom="-20dp"
+            android:text="Giá sản phẩm:"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            tools:ignore="DuplicateIds" />
+
+        <TextView
+            android:id="@+id/txt_priceproduct"
+            android:layout_width="wrap_content"
+            android:layout_height="28dp"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentBottom="true"
+            android:layout_marginTop="61dp"
+            android:layout_marginEnd="104dp"
+            android:layout_marginRight="104dp"
+            android:layout_marginBottom="-21dp"
             android:text="ProductPrice"
-            android:textColor="@color/white"
             android:textSize="16sp"
             android:textStyle="bold"
             tools:ignore="DuplicateIds" />
     </RelativeLayout>
 
-    <RelativeLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/Btn_Save_edit"
+        android:layout_width="120dp"
+        android:layout_height="38dp"
         android:layout_below="@+id/Product_content"
-        android:orientation="horizontal">
-
-        <androidx.appcompat.widget.AppCompatButton
-            android:id="@+id/button"
-            android:textColor="@color/white"
-            android:layout_width="wrap_content"
-            android:paddingLeft="5dp"
-            android:paddingRight="5dp"
-            android:background="#cf2127"
-            android:layout_height="wrap_content"
-            android:layout_alignParentTop="true"
-            android:layout_gravity="top"
-            android:layout_marginTop="5dp"
-            android:text="Thêm vào giở hàng"
-            android:layout_centerHorizontal="true"
-            tools:ignore="UnknownId" />
-    </RelativeLayout>
+        android:layout_alignParentBottom="true"
+        android:layout_gravity="top"
+        android:layout_marginTop="260dp"
+        android:layout_marginEnd="11dp"
+        android:layout_marginRight="11dp"
+        android:layout_marginBottom="15dp"
+        android:layout_toStartOf="@+id/Btn_Back_edit"
+        android:layout_toLeftOf="@+id/Btn_Back_edit"
+        android:background="@color/red"
+        android:paddingLeft="5dp"
+        android:paddingRight="5dp"
+        android:text="Xóa"
+        android:textColor="@color/white"
+        tools:ignore="UnknownId" />
 
 </RelativeLayout>

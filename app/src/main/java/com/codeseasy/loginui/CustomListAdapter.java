@@ -1,5 +1,7 @@
 package com.codeseasy.loginui;
 import android.content.Context;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -7,20 +9,30 @@ import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.ImageView;
 import android.widget.TextView;
+
+import com.codeseasy.loginui.ClassModel.Book;
+
+import java.text.NumberFormat;
+import java.util.Currency;
 import java.util.List;
+import java.util.Locale;
+
 public class CustomListAdapter  extends BaseAdapter {
 
-    private List<ComicBooks> listData;
+    private List<Book> listData;
     private LayoutInflater layoutInflater;
     private Context context;
+
     public CustomListAdapter() {
 
     }
-    public CustomListAdapter(Context aContext,  List<ComicBooks> listData) {
+
+    public CustomListAdapter(Context aContext, List<Book> listData) {
         this.context = aContext;
         this.listData = listData;
         layoutInflater = LayoutInflater.from(aContext);
     }
+
     @Override
     public int getCount() {
         return listData.size();
@@ -41,37 +53,40 @@ public class CustomListAdapter  extends BaseAdapter {
         if (convertView == null) {
             convertView = layoutInflater.inflate(R.layout.list_item_layout, null);
             holder = new ViewHolder();
-            holder.flagView = (ImageView) convertView.findViewById(R.id.imageView_flag);
-            holder.countryNameView = (TextView) convertView.findViewById(R.id.textView_countryName);
-            holder.populationView = (TextView) convertView.findViewById(R.id.textView_population);
+            holder.bookNameView = (TextView) convertView.findViewById(R.id.txt_ProductName);
+            holder.priceView = (TextView) convertView.findViewById(R.id.textView_price);
+            holder.imageView = (ImageView) convertView.findViewById(R.id.imageView_flag);
             convertView.setTag(holder);
         } else {
             holder = (ViewHolder) convertView.getTag();
         }
 
-        ComicBooks country = this.listData.get(position);
-        holder.countryNameView.setText(country.getCountryName());
-        holder.populationView.setText("Giá bán: " + country.getPopulation()+".000 VND");
+        Book book = this.listData.get(position);
+        holder.bookNameView.setText(book.getBookName());
+        holder.priceView.setText("Giá bán: " + CurrencyVN(book.getPrice()));
 
-        int imageId = this.getMipmapResIdByName(country.getFlagName());
+        byte[] image = book.getImage();
+        Bitmap bitmap = BitmapFactory.decodeByteArray(image, 0, image.length);
+        try {
+            holder.imageView.setImageBitmap(bitmap);
+        }catch (Exception e){
 
-        holder.flagView.setImageResource(imageId);
-
+        }
         return convertView;
     }
 
-    public int getMipmapResIdByName(String resName)  {
-        String pkgName = context.getPackageName();
-        // Return 0 if not found.
-        int resID = context.getResources().getIdentifier(resName , "mipmap", pkgName);
-        Log.i("CustomListView", "Res Name: "+ resName+"==> Res ID = "+ resID);
-        return resID;
-    }
-
     static class ViewHolder {
-        ImageView flagView;
-        TextView countryNameView;
-        TextView populationView;
+        ImageView imageView;
+        TextView bookNameView;
+        TextView priceView;
     }
 
+    public static String CurrencyVN(int currency) {
+        //đơn vị VN
+        Locale vn = new Locale("vi", "VN");
+        Currency dollars = Currency.getInstance(vn);
+        NumberFormat vnFormat = NumberFormat.getCurrencyInstance(vn);
+        return String.valueOf(vnFormat.format(currency));
+    }
 }
+

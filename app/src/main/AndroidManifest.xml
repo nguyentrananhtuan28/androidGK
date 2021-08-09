@@ -20,6 +20,9 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity android:name=".AddPActivity"/>
+        <activity android:name=".EditPActivity">
+        </activity>
         <activity android:name=".SignUpActivity"
             tools:ignore="Instantiatable">
             <intent-filter>

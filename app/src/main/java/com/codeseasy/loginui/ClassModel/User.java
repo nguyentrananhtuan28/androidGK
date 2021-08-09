@@ -1,11 +1,11 @@
-package com.codeseasy.loginui;
+package com.codeseasy.loginui.ClassModel;
 
 public class User {
     private String UserName;
     private String Pass;
     private String Name;
     private String StudenID;
-    public User() {}
+    public User(String string, String cursorString, String s) {}
     public User(String userName, String pass, String name, String studenID) {
         UserName = userName;
         Pass = pass;
@@ -16,6 +16,8 @@ public class User {
     public User(String userName, String pass) {
         UserName = userName;
         Pass = pass;
+    }
+    public User(){
     }
 
     public String getUserName() {
